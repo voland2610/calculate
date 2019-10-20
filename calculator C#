@@ -1,0 +1,258 @@
+using System;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace FirstWpfApp
+{
+    public partial class MainWindow : Window
+    {
+        public string one = "";
+        public string operation = "";
+        public string two = "";
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+            // кнопка 1
+            textBlock.Text += "1";
+            if(operation == "" || operation == null)
+            {
+                one += "1";
+            }
+            else
+            {
+                two += "1";
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            // кнопка 2
+            textBlock.Text += "2";
+            if (operation == "" || operation == null)
+            {
+                one += "2";
+            }
+            else
+            {
+                two += "2";
+            }
+
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            // кнопка 3
+            textBlock.Text += "3";
+            if (operation == "" || operation == null)
+            {
+                one += "3";
+            }
+            else
+            {
+                two += "3";
+            }
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            // кнопка 4
+            textBlock.Text += "4";
+            if (operation == "" || operation == null)
+            {
+                one += "4";
+            }
+            else
+            {
+                two += "4";
+            }
+
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            // кнопка 5
+            textBlock.Text += "5";
+            if (operation == "" || operation == null)
+            {
+                one += "5";
+            }
+            else
+            {
+                two += "5";
+            }
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            // кнопка 6
+            textBlock.Text += "6";
+            if (operation == "" || operation == null)
+            {
+                one += "6";
+            }
+            else
+            {
+                two += "6";
+            }
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            // кнопка 7
+            textBlock.Text += "7";
+            if (operation == "" || operation == null)
+            {
+                one += "7";
+            }
+            else
+            {
+                two += "7";
+            }
+        }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            // кнопка 8
+            textBlock.Text += "8";
+            if (operation == "" || operation == null)
+            {
+                one += "8";
+            }
+            else
+            {
+                two += "8";
+            }
+        }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            // кнопка 9
+            textBlock.Text += "9";
+            if (operation == "" || operation == null)
+            {
+                one += "9";
+            }
+            else
+            {
+                two += "9";
+            }
+        }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            // кнопка 0
+            textBlock.Text += "0";
+            if (operation == "" || operation == null)
+            {
+                one += "0";
+            }
+            else
+            {
+                two += "0";
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // кнопка плюс
+            if (operation == "")
+            {
+                operation = "+";
+                textBlock.Text += "+";
+            }
+             
+            
+        }
+
+        private void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+            // кнопка минус
+            if (operation == "")
+            {
+                operation = "-";
+                textBlock.Text += "-";
+            }
+
+            
+        }
+
+        private void Button_Click_13(object sender, RoutedEventArgs e)
+        {
+            // кнопка умножения
+            if(operation == "")
+            {
+                operation = "*";
+                textBlock.Text += "*";
+            }
+            
+        }
+        private void Button_Click_14(object sender, RoutedEventArgs e)
+        {
+            // кнопка деления
+            if(operation == "")
+            {
+                operation = "/";
+                textBlock.Text += "/";        
+            }          
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            // кнопка равно
+            if(one != "" && two != "")
+            {
+            int num1 = int.Parse(one);
+            int num2 = int.Parse(two);   
+            int result = 0;
+            textBlock.Text += "=";
+            if (one != "" && two != "")
+            {
+                switch (operation)
+                {
+                    case "+":
+                        result = num1 + num2;
+                        textBlock.Text += (result.ToString());
+                        break;
+                    case "-":
+                        result = num1 - num2;
+                        textBlock.Text += (result.ToString());
+                        break;
+                    case "*":
+                        result = num1 * num2;
+                        textBlock.Text += (result.ToString());
+                        break;
+                    case "/":
+                        try
+                        {
+                            result = num1 / num2;
+                            textBlock.Text += (result.ToString());
+                        }
+                        catch (DivideByZeroException)
+                        {
+
+                            textBlock.Text = " Деление на ноль";
+                        }
+                        break;
+                    }
+            
+                }                
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            // CLEAR
+            textBlock.Text = "";
+            one = "";
+            two = "";
+            operation = "";
+        }
+
+        
+    }
+}
